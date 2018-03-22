@@ -1,0 +1,27 @@
+{
+    "quotes": [
+        { 
+            "quote": "Genius is making complex ideas simple.", 
+            "author": "Albert Einstein",
+            "image": "assets/svg/quote_nameofquote.svg"
+        },
+
+        {
+            "quote": "Design is how it works.",
+            "author": "Steve Jobs",
+            "image": "assets/svg/quote_stevejobs.svg" 
+        },
+
+        {
+            "quote": "Another one bites the dust.",
+            "author": "Queen",
+            "image": "assets/svg/quote_nameofquote.svg" 
+        },
+
+        {
+            "quote": "I'm a people person...",
+            "author": "Office space",
+            "image": "assets/svg/quote_nameofquote.svg" 
+        }
+    ]
+}
