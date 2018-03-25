@@ -11,7 +11,7 @@
   <meta name="description" content="Nate Joyner is a Freelance developer from Kalamazoo MI focusing on Front-end Development, Wordpress Development, and Css Architecture.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="natejoyner.github.io/">
+  <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Front-end Develeoper Nate Joyner" href="/feed.xml">
 
   <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -193,17 +193,17 @@ Uncomment to enable:
 
                 <header class="item__header">
                   <!-- NOTE: 'aria-controls' must match content panel #id -->
-                  <p id="item1" class="text-size-14 weight--bold remove--bottom" 
-                    aria-controls="panel1" role="tab" tabindex="0">
-                      Read More
+                  <p id="itemTogg" class="text-size-14 weight--bold remove--bottom" 
+                    aria-controls="panel" role="tab" tabindex="0">
+                      <span class="inner-text">Read More</span>
                   </p>
                 </header>
 
             </a>
 
             <!-- NOTE: 'aria-labeledby' must match heading/title #id -->
-            <div id="panel1" class="p-summary content accordion__panel" 
-                aria-labeledby="item1" role="tabpanel" hidden>
+            <div id="panel" class="p-summary content accordion__panel" 
+                aria-labeledby="itemTogg" role="tabpanel" hidden>
 
                 <div class="panel__body text-size-16">
 
@@ -227,7 +227,7 @@ Uncomment to enable:
   <section class="flex-container">
 
     <figure class="post__img">
-      <img src="natejoyner.github.io/assets/img/JP_project_img.jpg" 
+      <img src="http://localhost:4000/assets/img/JP_project_img.jpg" 
         alt="Joyner's Painting custom wordpress website design"
         class="img" />
     </figure>
@@ -468,6 +468,15 @@ $itemTrigger.on('click', function(event) {
 
     // set expanded value
     $(this).attr('aria-expanded', String(!expanded) );
+
+    // change button inner element text if expanded == false
+    // revert text back to normal
+    if(!expanded) {
+        $(this).find('.inner-text').html("Show Less");
+    }
+    else {
+        $(this).find('.inner-text').html("Show More");
+    }
 
     // update hidden attribute
     itemContent.attr('hidden', expanded);
