@@ -8,7 +8,7 @@
 
   <title>Joyners Painting</title>
   
-  <meta name="description" content="A unique, approachable website for Joyner’s Painting. Built with Wordpress to be easily manageable, the clean minimal design makes it easy to navigate and un...">
+  <meta name="description" content="Call-to-actions (CTA’S) are integrated within the site and content allowing customers to easily contact Joyner’s Painting at any point in the user journey.">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="natejoyner.github.io/work/project-one/">
@@ -170,19 +170,17 @@ Uncomment to enable:
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Joyners Painting</h1>
     <p class="post-meta">
-      <time datetime="2018-03-22T00:10:16-04:00" itemprop="datePublished">
+      <time datetime="2018-03-25T00:35:25-04:00" itemprop="datePublished">
         
-        Mar 22, 2018
+        Mar 25, 2018
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>A unique, approachable website for Joyner’s Painting. Built with Wordpress to be easily manageable, the clean minimal design makes it easy to navigate and understand.</p>
+    <p>Call-to-actions (CTA’S) are integrated within the site and content allowing customers to easily contact Joyner’s Painting at any point in the user journey.</p>
 
-<p>Call-to-actions (CTA’S) are integrated within the site and content allowing customers to easily contact Joyner’s Painting at any point in the user journey.</p>
-
-<p>One of the major goals of the site was to showcase all availible services and specific information about common painting problems and providing solutions to specific problems.</p>
+<p>A couple major goals of the site were to showcase all availible services and feature common painting problems while also providing solutions to specific problems. This would position Joyner’s Painting as a reliable professional resource to customers.</p>
 
 
   </div>
@@ -313,6 +311,57 @@ Uncomment to enable:
     </footer>
 
   </div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+<script>
+(function($) {
+/*------------------------------------*\
+    JQuery UI Accordian 
+\*------------------------------------*/
+
+//
+//  Handles multiple items, built with accessability in mind.
+//
+
+var $itemTrigger = $('.accordion .item-toggle');
+var itemContent = $itemTrigger.next(); // get next sibling el
+
+// set initial (closed/hidden) states
+$itemTrigger.attr('aria-expanded', 'false'); // set attribute value
+itemContent.attr('hidden', 'true');
+
+$itemTrigger.on('click', function(event) {
+
+
+    // Stop Default link behavior
+    event.preventDefault();
+
+    // re-assign item content relative to action (clicked) el
+    var itemContent = $(this).next();
+
+    // asssign toggle menu visibility
+    // get attribute value and compare
+    var expanded = $(this).attr('aria-expanded') === 'true'; 
+
+    // reset all item(s) visibility
+    $itemTrigger.attr('aria-expanded', 'false'); // item trigger
+    $itemTrigger.next().attr('hidden', 'true'); // item content
+
+    // set expanded value
+    $(this).attr('aria-expanded', String(!expanded) );
+
+    // update hidden attribute
+    itemContent.attr('hidden', expanded);
+
+
+});
+
+// END 
+})(jQuery);
+</script>
 
  
 <script>

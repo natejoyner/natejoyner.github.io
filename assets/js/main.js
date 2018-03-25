@@ -144,6 +144,48 @@ scrollDown.on('click', function(e) {
 
 
 
+/*------------------------------------*\
+    JQuery UI Accordian 
+\*------------------------------------*/
+
+//
+//  Handles multiple items, built with accessability in mind.
+//
+
+var $itemTrigger = $('.accordian .item-toggle');
+var itemContent = $itemTrigger.next(); // get next sibling el
+
+// set initial (closed/hidden) states
+$itemTrigger.attr('aria-expanded', 'false'); // set attribute value
+itemContent.attr('hidden', 'true');
+
+$itemTrigger.on('click', function(event) {
+
+    // Stop Default link behavior
+    event.preventDefault();
+
+    // re-assign item content relative to action (clicked) el
+    var itemContent = $(this).next();
+
+    // asssign toggle menu visibility
+    // get attribute value and compare
+    var expanded = $(this).attr('aria-expanded') === 'true'; 
+
+    // reset all item(s) visibility
+    $itemTrigger.attr('aria-expanded', 'false'); // item trigger
+    $itemTrigger.next().attr('hidden', 'true'); // item content
+
+    // set expanded value
+    $(this).attr('aria-expanded', String(!expanded) );
+
+    // update hidden attribute
+    itemContent.attr('hidden', expanded);
+
+
+});
+
+
+
 
 // END 
 })(jQuery);
